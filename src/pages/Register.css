@@ -1,0 +1,227 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Full page */
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #020617, #0f172a, #1e293b);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+}
+
+/* Animated bg */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Container */
+.register-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* 🔥 COMPACT REGISTER CARD */
+.register-card {
+  width: 100%;
+  max-width: 360px; /* 🔥 REDUCED FROM 430px */
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-radius: 20px; /* 🔥 SMALLER */
+  padding: 32px 24px; /* 🔥 REDUCED FROM 42px 32px */
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  animation: fadeIn 0.7s ease;
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* 🔥 COMPACT LOGO */
+.logo-section {
+  text-align: center;
+  margin-bottom: 20px; /* 🔥 REDUCED FROM 28px */
+}
+
+.logo-icon {
+  font-size: 45px; /* 🔥 REDUCED FROM 55px */
+  color: #38bdf8;
+  margin-bottom: 8px; /* 🔥 REDUCED FROM 10px */
+}
+
+.logo-section h1 {
+  color: #ffffff;
+  font-size: 26px; /* 🔥 REDUCED FROM 30px */
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.logo-section p {
+  color: #cbd5e1;
+  font-size: 13px; /* 🔥 REDUCED FROM 14px */
+  margin-top: 4px; /* 🔥 REDUCED FROM 6px */
+}
+
+/* 🔥 COMPACT INPUTS */
+.register-form .input-group {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.06);
+  margin-bottom: 14px; /* 🔥 REDUCED FROM 18px */
+  border-radius: 12px; /* 🔥 SMALLER */
+  padding: 12px 14px; /* 🔥 REDUCED FROM 14px 16px */
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.register-form .input-group:focus-within {
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+  background: rgba(255, 255, 255, 0.08);
+  transform: scale(1.02);
+}
+
+.input-icon {
+  color: #38bdf8;
+  margin-right: 10px; /* 🔥 REDUCED FROM 12px */
+  font-size: 16px; /* 🔥 REDUCED FROM 18px */
+  flex-shrink: 0;
+}
+
+.input-group input {
+  flex: 1; /* 🔥 BETTER FLEX */
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #ffffff;
+  font-size: 14px; /* 🔥 REDUCED FROM 15px */
+  font-weight: 500;
+  caret-color: #38bdf8;
+}
+
+.input-group input::placeholder {
+  color: #94a3b8;
+}
+
+/* 🔥 ULTRA STRONG AUTOFILL FIX */
+.input-group input:-webkit-autofill,
+.input-group input:-webkit-autofill:hover,
+.input-group input:-webkit-autofill:focus,
+.input-group input:-webkit-autofill:focus:hover,
+.input-group input:-webkit-autofill:active,
+.input-group input:-webkit-autofill:valid {
+  -webkit-box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.06) inset !important;
+  box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.06) inset !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+  transition: background-color 5000s ease-in-out 0s !important;
+  color: #ffffff !important;
+}
+
+/* 🔥 COMPACT BUTTON */
+.register-btn {
+  width: 100%;
+  padding: 12px; /* 🔥 REDUCED FROM 14px */
+  border: none;
+  border-radius: 12px; /* 🔥 SMALLER */
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+  color: white;
+  font-size: 15px; /* 🔥 REDUCED FROM 16px */
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  margin-top: 4px; /* 🔥 ADD MARGIN */
+}
+
+.register-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(56, 189, 248, 0.35);
+}
+
+.register-btn:active {
+  transform: translateY(0);
+}
+
+/* 🔥 COMPACT LOGIN TEXT */
+.login-text {
+  text-align: center;
+  margin-top: 16px; /* 🔥 REDUCED FROM 20px */
+  color: #cbd5e1;
+  font-size: 13px; /* 🔥 REDUCED FROM 14px */
+}
+
+.login-text span {
+  color: #38bdf8;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.login-text span:hover {
+  text-decoration: underline;
+  color: #60d2f7;
+}
+
+/* 🔥 ULTRA COMPACT RESPONSIVE */
+@media (max-width: 480px) {
+  .register-card {
+    max-width: 340px; /* 🔥 PERFECT MOBILE */
+    padding: 28px 20px; /* 🔥 COMPACT MOBILE */
+    border-radius: 18px;
+    margin: 10px;
+  }
+
+  .logo-section h1 {
+    font-size: 22px; /* 🔥 MOBILE PERFECT */
+  }
+
+  .logo-icon {
+    font-size: 38px; /* 🔥 MOBILE ICON */
+  }
+
+  .register-btn {
+    font-size: 14px; /* 🔥 MOBILE BUTTON */
+    padding: 11px;
+  }
+  
+  .input-group {
+    padding: 10px 12px; /* 🔥 MOBILE INPUTS */
+    margin-bottom: 12px;
+  }
+}
+
+/* High contrast & Reduced motion */
+@media (prefers-contrast: high) {
+  .input-group { border-width: 2px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

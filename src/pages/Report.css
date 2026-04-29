@@ -1,0 +1,527 @@
+/* ========================================
+   REPORT PAGE - COMPACT DESIGN (Smaller Sizes)
+======================================== */
+
+/* =========================
+   ROOT VARIABLES (Compact Theme)
+========================= */
+:root {
+  /* Backgrounds */
+  --bg-main: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #e2e8f0 100%);
+  --bg-card: rgba(255, 255, 255, 0.95);
+  --glass-bg: rgba(255, 255, 255, 0.8);
+  --glass-bg-hover: rgba(255, 255, 255, 0.95);
+
+  /* Text */
+  --text-main: #1e293b;
+  --text-sub: #64748b;
+  --text-muted: #94a3b8;
+
+  /* Colors */
+  --primary: #3b82f6;
+  --primary-dark: #2563eb;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+
+  /* Smaller Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.08);
+  --shadow-md: 0 2px 8px 0 rgb(0 0 0 / 0.12);
+  --shadow-lg: 0 4px 16px 0 rgb(0 0 0 / 0.15);
+  --shadow-xl: 0 8px 24px 0 rgb(0 0 0 / 0.15);
+
+  /* Smaller Radius */
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 16px;
+
+  /* Compact Spacing */
+  --space-xxs: 2px;
+  --space-xs: 6px;
+  --space-sm: 10px;
+  --space-md: 12px;
+  --space-lg: 16px;
+  --space-xl: 20px;
+}
+
+/* DARK MODE */
+[data-theme="dark"] {
+  --bg-main: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+  --bg-card: rgba(30, 41, 59, 0.95);
+  --glass-bg: rgba(51, 65, 85, 0.8);
+  --glass-bg-hover: rgba(71, 85, 105, 0.95);
+
+  --text-main: #f8fafc;
+  --text-sub: #cbd5e1;
+  --text-muted: #94a3b8;
+}
+
+/* BASE RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+  color: var(--text-main);
+  background: var(--bg-main);
+  min-height: 100vh;
+  font-size: 14px;
+}
+
+/* =========================
+   COMPACT REPORT CONTAINER
+========================= */
+.report-container {
+  min-height: 100vh;
+  padding: var(--space-lg);
+  animation: pageFadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================
+   COMPACT HEADER
+========================= */
+.report-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-md);
+  background: var(--bg-card);
+  backdrop-filter: blur(15px);
+  border: 1px solid var(--glass-bg);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  margin-bottom: var(--space-lg);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.report-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--success));
+}
+
+.report-header > div:first-child {
+  flex: 1;
+}
+
+.report-header h1 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: var(--space-xxs);
+  line-height: 1.2;
+}
+
+.report-header p {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* =========================
+   COMPACT BUTTONS
+========================= */
+.report-actions {
+  display: flex;
+  gap: var(--space-xs);
+  flex-shrink: 0;
+}
+
+.report-actions button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 8px 14px;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+  font-family: inherit;
+}
+
+.report-actions button:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.report-actions button svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Button Colors */
+.report-actions button:first-child {
+  background: linear-gradient(135deg, var(--success), #059669);
+  color: white;
+}
+
+.report-actions button:nth-child(2) {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+}
+
+.report-actions button.danger {
+  background: linear-gradient(135deg, var(--danger), #dc2626);
+  color: white;
+}
+
+/* =========================
+   COMPACT GRID
+========================= */
+.report-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .report-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+}
+
+/* =========================
+   COMPACT CARDS
+========================= */
+.report-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(15px);
+  border: 1px solid var(--glass-bg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-md);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.report-card.glass {
+  border-color: rgba(59, 130, 246, 0.15);
+}
+
+.report-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.report-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary), transparent);
+}
+
+/* =========================
+   COMPACT USER BOX
+========================= */
+.user-box {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--glass-bg);
+}
+
+.user-box svg {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  color: var(--primary);
+}
+
+.user-box h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 var(--space-xxs) 0;
+  color: var(--text-main);
+}
+
+.user-box p {
+  margin: 0;
+  color: var(--text-sub);
+  font-size: 0.8rem;
+}
+
+/* =========================
+   COMPACT TEST ROWS
+========================= */
+.test-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.test-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  background: var(--glass-bg);
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.test-row::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 2px;
+  background: var(--glass-bg);
+}
+
+.test-row:hover {
+  background: var(--glass-bg-hover);
+  border-color: rgba(59, 130, 246, 0.2);
+  transform: translateX(3px);
+  box-shadow: var(--shadow-sm);
+}
+
+.test-row span {
+  font-weight: 600;
+  color: var(--text-main);
+  font-size: 0.9rem;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-weight: 600;
+}
+
+.status b {
+  font-size: 0.85rem;
+  color: var(--text-main);
+  min-width: 65px;
+  text-align: right;
+}
+
+/* =========================
+   COMPACT SCORE CARD
+========================= */
+.score-card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 320px;
+  padding: var(--space-md) !important;
+}
+
+.score-card h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: var(--space-md);
+  color: var(--text-main);
+}
+
+/* Compact Score Circle */
+.score-circle {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto var(--space-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+}
+
+.score-circle span {
+  font-size: 0.65em;
+  font-weight: 500;
+  opacity: 0.9;
+  margin-left: var(--space-xs);
+}
+
+.score-circle::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(
+    var(--success) 0deg 75%,
+    #e5e7eb 75deg 360deg
+  );
+  z-index: 1;
+}
+
+.score-circle::after {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  box-shadow: var(--shadow-sm);
+  z-index: 2;
+}
+
+/* =========================
+   COMPACT PROGRESS BAR
+========================= */
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: var(--glass-bg);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: var(--space-sm);
+}
+
+.fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--success), var(--primary));
+  border-radius: 6px;
+  transition: width 1s ease-out;
+  position: relative;
+}
+
+.fill::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  animation: shimmer 1.5s infinite;
+}
+
+/* =========================
+   COMPACT SCORE TEXT
+========================= */
+.score-text {
+  margin: var(--space-md) 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-main);
+  min-height: 1.4em;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--glass-bg);
+  line-height: 1.3;
+}
+
+/* =========================
+   COMPACT DOWNLOAD BUTTON
+========================= */
+.download-btn {
+  width: 100%;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  font-family: inherit;
+}
+
+.download-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
+}
+
+.download-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* =========================
+   RESPONSIVE (Compact)
+========================= */
+@media (max-width: 900px) {
+  .report-container {
+    padding: var(--space-md);
+  }
+  
+  .report-header {
+    flex-direction: column;
+    gap: var(--space-sm);
+    text-align: center;
+    padding: var(--space-sm);
+  }
+  
+  .report-actions {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .report-actions button {
+    flex: 1;
+    min-width: 90px;
+  }
+}
+
+@media (max-width: 600px) {
+  .score-circle {
+    width: 100px;
+    height: 100px;
+    font-size: 1.5rem;
+  }
+  
+  .score-card {
+    min-height: 280px;
+  }
+}
+
+@media (max-width: 400px) {
+  .test-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-xs);
+    padding: 12px;
+  }
+  
+  .status {
+    justify-content: flex-end;
+  }
+}
+
+/* DARK MODE */
+[data-theme="dark"] .score-circle::after {
+  background: rgba(30, 41, 59, 0.9);
+}

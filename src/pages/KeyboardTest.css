@@ -1,0 +1,72 @@
+.keyboard-page {
+  min-height: 100vh;
+background: var(--bg-main);
+color: var(--text-main);
+  padding: 30px;
+  font-family: Arial;
+}
+
+.keyboard-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.keyboard-header .icon {
+  font-size: 50px;
+  color: #38bdf8;
+}
+
+.keyboard-header h1 {
+  margin: 10px 0;
+  font-size: 32px;
+}
+
+.keyboard-header p {
+  color: #94a3b8;
+}
+
+.keyboard-container {
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+.keyboard-row {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.key {
+  min-width: 45px;
+  padding: 12px;
+  text-align: center;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.08);
+  transition: 0.2s;
+  font-size: 13px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.key:hover {
+  transform: scale(1.05);
+}
+
+.key.active {
+  background: #22c55e;
+  color: black;
+  box-shadow: 0 0 10px #22c55e;
+  transform: scale(1.1);
+}
+
+.status-box {
+  margin-top: 20px;
+  text-align: center;
+  background: rgba(255,255,255,0.05);
+  padding: 15px;
+  border-radius: 10px;
+}

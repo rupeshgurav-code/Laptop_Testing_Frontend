@@ -36,3 +36,35 @@
     transform: rotate(360deg);
   }
 }
+/* Default Dark Theme */
+:root {
+  --bg-main: #020617;
+  --bg-secondary: #0f172a;
+  --card-bg: rgba(255,255,255,0.06);
+  --text-main: #ffffff;
+  --text-sub: #cbd5e1;
+}
+
+/* Light Theme */
+body[data-theme="light"] {
+  --bg-main: #f8fafc;
+  --bg-secondary: #e2e8f0;
+  --card-bg: #ffffff;
+  --text-main: #111827;
+  --text-sub: #475569;
+}
+
+/* Dark Theme */
+body[data-theme="dark"] {
+  --bg-main: #020617;
+  --bg-secondary: #0f172a;
+  --card-bg: rgba(255,255,255,0.06);
+  --text-main: #ffffff;
+  --text-sub: #cbd5e1;
+}
+
+body {
+  background: linear-gradient(135deg, var(--bg-main), var(--bg-secondary));
+  color: var(--text-main);
+  transition: all 0.3s ease;
+}
