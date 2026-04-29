@@ -22,11 +22,15 @@ const WifiTest = () => {
   const [downloadSpeed, setDownloadSpeed] = useState(null);
   const [data, setData] = useState([]);
   const [isRunning, setIsRunning] = useState(false);
+  const [testHistory, setTestHistory] = useState([]);
 
   const [avgPing, setAvgPing] = useState(0);
   const [packetLoss, setPacketLoss] = useState(0);
   const [sessionStart, setSessionStart] = useState(null);
+  const [testsCount, setTestsCount] = useState(0);
 
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0, hoveredPoint: null });
+  const [isHovering, setIsHovering] = useState(false);
 
   const SERVERS = [
     "https://httpbin.org/get",
